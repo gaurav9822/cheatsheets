@@ -1,0 +1,62 @@
+1)Throwable is the superclass of all errors and exceptions in Java.
+ Error is the superclass of all errors which are not meant to be caught by applications. 
+ Thus, catching Throwable would essentially mean that Errors such as system exceptions
+ (e.g., OutOfMemoryError, StackOverFlowError or InternalError) would also get caught.
+ And, the recommended approach is that application should not try and recover from Errors such as these. 
+ Thus, Throwable and Error classes should not be caught. Only Exception and its subclasses should be caught.
+ 
+ 
+
+2)
+public void foo(String bar) throws Throwable { // Non-compliant
+  throw new RuntimeException("My Message");    // Non-Compliant
+}
+// One other instance which displays throwing Exception
+public void doSomething() throws Exception {...} // Non-compliant code
+
+
+3)Exception                               Occasion for Use
+IllegalArgumentException 					Non-null parameter value is inappropriate
+IllegalStateException 						Object state is inappropriate for method
+NullPointerException 						Parameter value is null where prohibited
+IndexOutOfBoundsException 					Index parameter value is out of range
+ConcurrentModificationException 			Concurrent modification of an object has been detected where it is prohibited
+UnsupportedOperationException 				Object does not support method
+
+
+4)
+
+higher layers should catch lower-level exceptions
+                  and throw higher-level exceptions
+				  
+// Exception Translation
+try {
+// Use lower-level abstraction to do our bidding
+...
+} catch(LowerLevelException e) {
+throw new HigherLevelException(...);
+}
+
+
+5)Failure atomicity
+
+restore object to its initial state if an exception occurs at instant.
+
+Other way of doing this, is to perform operation on temp object and copy only when its 100% done .....
+
+
+6)Dont ignore exceptions
+An empty catch block defeats the purpose of exceptions, which is to force
+you to handle exceptional conditions. Ignoring an exception is analogous to ignoring
+a fire alarm
+
+
+
+
+
+
+
+
+
+
+

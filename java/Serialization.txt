@@ -1,0 +1,19 @@
+Serialization : convert object to byte-streams
+
+
+1)Simple way is to make class implements serializable
+
+2)Every serializable class has a UID
+
+serialVersionUID which is static final long
+If not declared explicitly, then its computed automatically
+
+3)
+
+Classes designed for inheritance should rarely implement Serializable, 
+
+and interfaces should rarely extend it.
+
+
+
+
