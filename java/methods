@@ -1,0 +1,59 @@
+1.
+For parameter types, favor interfaces over classes
+
+there is no reason ever to write a method that takes HashMap on input—use Map instead.
+This lets you pass in a Hashtable, a HashMap, a TreeMap, a submap of a TreeMap, or any Map implementation yet to be written
+
+
+2.
+Use overloading judiciously,
+
+the choice of which overloading to invoke is made at compile time. 
+
+e.g. you have Set<?>, List<?> and  Collection<?>
+For all three iterations of the loop, the compile-time type of the parameter is the same:
+Collection<?>. 
+
+The runtime type is different in each iteration, but this does not affect the choice of overloading.
+Because the compile-time type of the parameter is Collection<?>, the only applicable overloading is the third one
+, classify(Collection<?>), and this overloading is invoked in each iteration of the loop. 
+
+
+3. Use var args judiciuosly:
+
+// The right way to use varargs to pass one or more arguments , is pass one fix and one var-arg
+
+static int min(int firstArg, int... remainingArgs) { 
+
+}
+
+
+4. Return empty arrays or collection,not nulls
+
+If you return null, then client has to remember to check for null everytime.
+
+else return arr[0] or Collections.emptyList() et al....
+
+
+5.Avoid float and Double if exact answers are needed.......
+
+Upto 9 digits use int,
+10-18 Use long,
+Use BigDecimal if calculations > 18 digits
+
+
+
+
+
+6. Prefer primitives to boxed primitives
+
+primitives: int, double, boolean(only values)
+boxed prim: Integer, Double, Boolean(identities + value)
+
+
+
+
+
+
+
+
