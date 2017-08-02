@@ -1,0 +1,39 @@
+1)
+
+Equals() method overriding contract:
+For non-null reference comparisons x.equals() it should be equivalence relation.
+i.e. Reflexive, symmetric and transitive.
+
+
+Recipe for a high-quality equals() method
+1]Use == operator to check if argument is reference to this object.
+2]Use 'instanceof' operator to check if argument has correct type.
+3]Always override hashCode when you override equals 
+
+ If two objects are equal -> hashCode must be same
+ If two objects are not equal -> hashCode should be different but could be same.
+ 
+ 
+ 
+ 
+2)
+
+Always override toString()
+
+By default it is =  className@unsignedHexadecimalHashCode
+
+
+
+3)
+
+Consider implementing Comparable Interface's CompareTo():
+
+So,you allow your class to interoperate with all of
+the many generic algorithms and collection implementations that depend on this
+interface
+
+
+
+
+
+ 

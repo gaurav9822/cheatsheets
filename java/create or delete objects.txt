@@ -1,0 +1,106 @@
+1)Consider static factory methods instead of constructors
+
+It is public static factory method, which is
+simply a static method that returns an instance of the class.
+
+e.g.
+public static Boolean valueOf(boolean b) {
+return b ? Boolean.TRUE : Boolean.FALSE;
+}
+
+Pros: 
+unlike constructors,
+they are not required to create a new object each time they’re invoked.
+
+Cons:
+classes without public or protected constructors cannot be subclassed
+
+
+
+2)Consider a builder when faced with many constructor parameters
+
+ The builder is a static member class of the class it builds
+ 
+ e.g.
+ 
+ public class NutritionFacts {
+ //members
+ 
+	public static class Builder {
+		//required parameters
+		
+		//optional parameters
+		
+		//constructor for required
+		
+		// Builder methods
+		
+		//build() method
+			public NutritionFacts build() {
+				return new NutritionFacts(this);
+			}
+	
+	}
+	
+	
+	
+	//private constructor for NutritionFacts
+	private NutritionFacts(Builder builder) {
+			//initialize members with builder.member
+			
+			
+	}
+	
+ }
+ 
+Now, client code is simple
+
+NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8).
+calories(100).sodium(35).carbohydrate(27).build();
+
+
+********************************************************************************************
+
+
+
+3.
+Enforce the singleton property with 
+private constructor or
+an enum type 
+
+A singleton is simply a class that is instantiated exactly once
+
+
+// Singleton with static factory
+public class Elvis {
+	private static final Elvis INSTANCE = new Elvis();
+	
+	private Elvis() { ... }
+	
+	public static Elvis getInstance() { return INSTANCE; }
+	
+}
+
+
+
+// Singleton with Enum ...Best approach
+
+public enum Elvis {
+	INSTANCE;
+}
+
+
+4.Enforce noninstantiability with a private constructor
+
+
+5.Avoid creating unnecessary objects
+
+String s = new String("stringette"); // DON'T DO THIS!
+
+ String s = "stringette"; //The improved version 
+ 
+ 
+
+
+
+

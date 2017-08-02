@@ -1,0 +1,46 @@
+Classes and Interfaces:
+
+1.Minimize the accessibility of classes and members
+
+private -> default -> protected-> public
+
+With the exception of public static final fields, public classes should have no public fields.
+Ensure that objects referenced by public static final fields are immutable
+
+
+2.
+To make a class immutable :
+
+Don’t provide any setters/mutators
+Ensure that the class can’t be extended(make it final)
+Make all fields private and final
+For field referring mutable objects, make defensive copies
+
+
+3.
+
+Immutable objects are thread-safe; they require no synchronization
+
+4.
+
+Avoid all of the problems of interfaces with composition 
+i.e.
+Give your new class a private field that references
+an instance of the existing class
+
+
+5.
+
+Prefer interfaces to abstract classes
+
+6.
+
+Use interfaces only to define types
+
+7.
+Nested class:
+i)If it needs to be visible outside of a method -> use member class
+ii)If it needs reference to enclosing class(top class) -> make it non-static else static
+ii)If it is in a method ->make it anonymous class else local class.
+
+

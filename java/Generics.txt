@@ -1,0 +1,37 @@
+Generics
+
+Before generics, you had to cast
+every object you read from a collection
+
+The compiler inserts casts
+for you automatically and tells you at compile time if you try to insert an object of
+the wrong type
+
+
+1.
+Don’t use raw types in new code
+
+// Now a raw collection type - don't do this!
+private final Collection stamps = ... ;  //will compiler but will give runtime error if you insert anything else in it.....
+
+// Parameterized collection type - typesafe
+private final Collection<Stamp> stamps = ... ;  //will only allow stamps...will fail at compile time which is better compared to run-time failing
+
+
+2.
+Use unbound wildcard type ('?') :
+if you want generics but dont know type or care
+
+You can put any element into collection with raw-type(e.g. Set)
+You can only put null into wildcard type. e.g. Set<?>
+
+
+
+
+
+
+
+
+
+
+
