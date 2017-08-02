@@ -1,0 +1,18 @@
+1.annotation 'Test':
+
+@Retention(RetentionPolicy.RUNTIME) 
+@Target(ElementType.METHOD) 
+public @interface Test { }
+
+Here:
+ @Retention(RetentionPolicy.RUNTIME) meta-annotation indicates that Test annotations should be retained at runtime
+ @Target(ElementType.METHOD) meta-annotation indicates that the Test annotation is legal only on method declarations
+  
+  e.g.
+  
+  public class Sample { @Test public static void m1() { }}  // Test should pass 
+  
+  
+  2.
+  
+  use the Override annotation on every method declaration that you believe to override a supertype declaration
