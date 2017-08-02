@@ -22,8 +22,30 @@ private final Collection<Stamp> stamps = ... ;  //will only allow stamps...will 
 Use unbound wildcard type ('?') :
 if you want generics but dont know type or care
 
+
+
 You can put any element into collection with raw-type(e.g. Set)
 You can only put null into wildcard type. e.g. Set<?>
+
+
+As generic info is erased at runtime, use only raw type with 'instancoeof' operator.
+
+
+3.
+
+Prefer lists to arrays
+
+
+Arrays are covariant meaning if Sub is subtype of Super -> Sub[] is subtype of Super[]
+Generics are invariant.....
+
+Rule: 
+For wildcard type parameters,
+PECS stands for producer-extends, consumer-super.
+
+
+
+
 
 
 
