@@ -1,0 +1,66 @@
+Design Patterns:-
+Creational Patterns
+Structural Patterns
+Behavioral Patterns
+
+1.Singleton Pattern:
+a class for which only one instance can be created
+
+e.g.you can singletons with a single-element enum type
+public enum MyEnumSingleton {
+    INSTANCE;
+
+    // other useful methods here
+}
+
+
+2.Observer pattern
+
+one-to-many dependency between objects so that when one object changes state,
+ all of its dependents are notified and updated automatically.
+ 
+ 
+ being watched- subject
+ listening ones - listeners/observers
+ 
+ 
+ you can define a listener for a button in a user interface. 
+ If the button is selected, the listener is notified and performs a certain action.
+ 
+ 
+3.Facade pattern
+ 
+ The Facade Pattern provides a unified interface to a set of interfaces
+ 
+ e.g.
+ facade pattern which hides the complex db access interface behind 
+ a few easy to understand and maintainable interface, e.g., load() and get()
+ 
+********************  ****************************************************************************************************
+ 
+ Head first design patterns:
+ 
+ 1.Seperate static and dynamic part 
+ 
+ program to supertype and not concrete implementation....
+ e.g. Animal a=new Dog();
+ a.makeSound(); will call dog's bark();
+ 
+ 
+ 
+ 2.Favor composition over inheritance
+ 
+ 3.strategy pattern: seperating behaviour in additional class 
+ 
+ 
+ 4. observer pattern = publishers + subscribers 
+ 
+    i)Subject: implements subject interface having methods registerObserver(), removeObserver(), notifyObserver()......
+	ii)Observer: implements observer interface update() which gets called from 	Subject's state changes...................
+	
+	Java has inbuilt support with java.util.Observable class(for subject) and java.util.Observer interface(for subscribers).
+	1.Subject subclasses observable -> call setChanged() -> call notifyObservers()
+	2.Observer implements Observer -> register itself as observer by calling addObserver() -> call update() to get new details.
+	
+	
+	
