@@ -1,11 +1,53 @@
-Microservices is a variant of the service-oriented architecture (SOA)
- architectural style that structures an application as a collection of loosely coupled services
+Microservices is a variant of the (SOA) architectural style that structures an application as a collection of loosely coupled services
  
  
 Three opinionated Java frameworks for working
 with microservices: Spring Boot, Dropwizard, and WildFly Swarm
 
-
-
 REST endpoint: similar to URL e.g. /api/hola
+
+
+1.Spring boot:-
+spring init --build maven --groupId com.redhat.examples --version 1.0 --java-version 1.7 --dependencies web --name hola-springboot hola-springboot
+
+Using actuator dependency -> we get lots of microservices insights
+
+Spring’s RestTemplate -> do invocation of remote services
+
+Gives out FAT JARs for every microservice......it can be put into docker image 
+
+To run your microservice:- "mvn spring-boot:run"
+
+******************************************************************************************************************************************
+
+2.Dropwizard:-
+consists of jetty, jackson and jetsey for REST
+METRICS gives insights to your services
+
+To generate project:-
+mvn -B archetype:generate -DarchetypeGroupId=io.dropwizard.archetypes -DarchetypeArtifactId=java-simple -DarchetypeVersion=0.9.2 -DgroupId=com.redhat.examples.dropwizard -DartifactId=hola-dropwizard -Dversion=1.0 -Dname=HolaDropwizard
+
+
+Project structure:
+api- contains POJOs/DTOs
+cli- commands
+client- client helper classes
+db- db code
+health - runtime admin interface
+resources - REST resource classes
+
+There is lots of boilerplate but a clear pattern is:
+bind java objects to YAML configuration file,
+
+
+******************************************************************************************************************************************
+
+3.WildFly swarm
+
+It evaluates your pom, determines what Java EE dependencies your microservice actually uses -> builds an uber JAR
+
+
+
+
+
 
