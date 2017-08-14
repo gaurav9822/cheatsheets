@@ -63,4 +63,50 @@ one-to-many dependency between objects so that when one object changes state,
 	2.Observer implements Observer -> register itself as observer by calling addObserver() -> call update() to get new details.
 	
 	
-	
+ 5. The Open-Closed Principle
+ Classes should be open
+for extension, but closed for
+modification.
+
+
+6. Decorator pattern:
+
+Decorators have the same supertype as the objects they decorate.
+
+we can decorate objects dynamically at runtime
+with as many decorators as we like
+
+java.io has extensively used decorator.
+e.g. LineNumberInputStream(BufferedInputStream(FilterInputStream))
+First two are concrete decorators and FilterInputStream acts as abstract decorator.
+
+How to create your own decorator?
+1.Create abstract-decorator which extends baseclass
+2.initialize with super() call and implement the methods.....
+
+Cons: large number of small classes can overwhelm developer.
+
+
+7. Factory pattern:
+
+Moving concrete object creation logic into a Factory class
+ concerned with only creation of Objects.
+ 
+Defines an interface for creating Objects but defers instantiation to subclasses.
+
+Dependency inversion principle:Depend upon abstractions and not concretions....
+Here inversion means instead of designing top-down, you look at low level classes and form abstract parent on which both
+low-level and high-level classes depend.
+
+Guidelines to follow:
+i.No reference to concrete class(use factory instead)
+ii.No class should derive from concrete class.(Derive from interface/abstract class)
+iii.No method should override implemented method of base-class.
+
+
+8. Singleton pattern:
+
+To allow Only one instance of a class.
+
+No public constructor
+Static method getInstance() to request its instance
