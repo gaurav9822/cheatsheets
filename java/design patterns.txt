@@ -71,6 +71,8 @@ modification.
 
 6. Decorator pattern:
 
+Doesn't alter interface but adds responsibility
+
 Decorators have the same supertype as the objects they decorate.
 
 we can decorate objects dynamically at runtime
@@ -110,3 +112,83 @@ To allow Only one instance of a class.
 
 No public constructor
 Static method getInstance() to request its instance
+
+
+Eagerly created instance will be thread-safe as JVM guarantees it before 
+accessing the variable.
+public class Singleton{
+	private static Singleton uniqueInstance=new Singleton(); // eager initialization
+	
+	private Singleton{}
+
+	public static Singleton getInstance(){return uniqueInstance;}
+	
+}
+
+
+If performance isnt an issue, then synchronize keyword can be used but it will decrease performance by 100x
+
+
+9. Command pattern
+
+Imagine a remote with slots..
+each slot is assigned a command it could be anything to turn on light, tv or oven...
+
+Command pattern encapsulates request as an object 
+Hence, invoker(remote ) calls execute() of ConcreteCommand(which implements command interface) which calls 
+		receiver's action() 
+		
+		invoker -> ConcreteCommand -> receiver
+
+
+When to use? Decouple object making requests from object that know how to perform request -> then use command pattern..
+
+10.Adapter pattern
+
+e.g Adapter converts US plug into an European socket........
+
+In OO, adapters taken an Interface and adapt it to an interface client expecting..
+
+client -> adapter (translate) -> target
+(client and target are decoupled)
+
+
+
+
+11. Facade pattern
+
+provide simplified interface to a complex interface.
+Difference between adapter and facade is -> adapter's intent is to alter and facade's intent is to simplify.
+
+*Principle of least knowledge:
+each function only "talks to friends", not to "friends of friends".
+
+Rules:We should call method only on
+1)object itself 2)objects passed as parameters 3)any object method creates/instantiates 4)any component of object
+
+12. Template method pattern
+
+defines steps of algorithm and allows subclasses to provide implementation for one or more steps...
+
+
+*Hollywood principle: Dont call us, we'll call you
+e.g.
+Only high-level components can call low-level and not vice-versa.........
+
+
+13. Proxy pattern
+proxy- a person authorized to act on behalf of another.
+
+i.Remote proxy
+client(JVM#1) -> proxy(JVM#1) -> remote object(JVM#2)
+
+Client thinks its talking to remote-object, but it talks to proxy and then proxy talks to remote-object.
+
+In java, 
+[ Client-object -> Client-Helper ]   ->  [Service-helper -> Service-object ]
+			(JVM#1)										(JVM#2)
+
+ii.Virtual Proxy
+Creates expensive objects on-demand....
+
+e.g. Display "Loading image" till the image is downloaded from internet and then show image instead of message...
