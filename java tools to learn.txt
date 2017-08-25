@@ -1,0 +1,128 @@
+Apereo CAS : Enterprise SSO
+Jackson JAX-RS providers
+Jackson-core: Java JSON API
+
+OpenWS: provides set of tools to work with web services at a low level.
+include classes for creating and reading SOAP messages, transport-independent clients for connecting to web services, 
+and various transports for use with those clients.
+
+Opensaml:provides tools to support developers working with the Security Assertion Markup Language (SAML).
+
+XMLTooling: to construct libraries to work with XML in java-beans manner.
+
+XMLSec: Apache XML Security for Java
+
+Commons DBCP: Commons Database Connection Pooling
+
+hibernate-jpa-2.0-api:Hibernate definition of the Java Persistence 2.0 (JSR 317) API.
+
+Maven-replacer-plugin : to replace tokens in a given file with a value
+
+Rhino: embedded in java-apps to provide scripting to users
+
+OWASP AntiSamy: for performing fast, configurable cleansing of HTML coming from untrusted sources
+
+UrlRewriteFilter: Java Web Filter for any J2EE compliant web application server 
+					which allows you to rewrite URLs before they get to your code
+					
+Apache CXF: to develop SOAP web-services
+
+Apache woden: provides a Java API for reading, manipulating, creating and writing WSDL documents
+
+Logging: slf4j, log4j, logback-classic
+
+JCIFS: implements the CIFS/SMB networking protocol in 100% Java...file sharing protocol(e.g. map network drive)....
+
+Hsqldb: in-memory database
+
+Xalan: an XSLT processor for transforming XML documents into HTML, text, or other XML 
+
+jregex : regular expression library for Java
+
+joda-time: widely used replacement for the Java date and time classes prior to Java SE 8
+
+JDOM:solution for accessing, manipulating, and outputting XML data
+
+jettison: object to/from JSON
+
+jfreechart: Java chart library
+
+jaxen: universal Java XPath engine.
+
+iText: library for creating and manipulating PDF files in Java.
+
+Bouncy Castle: collection of APIs used in cryptography
+
+FreeMarker: to replace placeholders from java 
+
+Geronimo: uses activeMQ jms
+
+dtdparser: parse DTD in java
+
+ezmorph: java library for transforming an Object to another Object.
+
+dom4j: Flexible XML framework for Java
+
+commons-lang: Java utility classes
+
+antlr: ANother Tool for Language Recognition is a powerful parser generator for reading, processing, executing, or translating structured text or binary files.
+
+asm: java bytecode manipulation framework
+
+cglib: API to generate and transform Java byte code
+
+xercesImpl:high performance, fully compliant XML parser
+
+beanshell: lightweight scripting for java
+
+jython: python in java
+
+kxml2: small xml parser
+
+spring-security-core: providing both authentication and authorization to Java applications
+
+Spring, Spring webmvc, Spring-tx: 4.1.9
+
+Apache POI- access microsoft office files
+
+xstream: object to/from xml
+
+saaj: SOAP with Attachments API for Java
+
+stax: stream xml to/from application
+
+Groovy: A powerful, dynamic language for the JVM
+
+jaxm: java API for xml messaging
+
+json-lib: Java library for transforming beans, maps, collections, java arrays and XML to JSON.
+
+perf4j: Performance statistics logging and monitoring toolkit extension to log4j, logback
+
+SOJO: allows you to convert Java object graphs into a specific structure (CSV, JSON, XML, etc).
+
+aspectjweaver: The AspectJ weaver introduces advices to java classes
+
+ognl: Object Graph Navigation Library
+
+person-directory: framework for resolving persons and attributes from a variety of underlying sources.
+
+inspektr: Lightweight non-Intruisive Auditing and Logging capabilities for Java 
+
+jboss-logging + jbossweb
+
+javassist:makes Java bytecode manipulation simple
+
+esapi:to create simple strong security controls for every web platform
+
+tomcat: connectors
+
+weblogic rmi
+
+wsadmin :  a command shell for the purpose of performing systems administration on all the artifacts in an IBM WebSphere Application Server
+
+Apache HttpClient:  allows to handling HTTP requests
+
+jetty dependencies: java http server and servlet container..
+
+servlet: 2.5 , jsp:2.2
